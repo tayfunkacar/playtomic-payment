@@ -1,5 +1,4 @@
 HELP.md
-.gitignore
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -32,4 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
-/.mvn/wrapper/maven-wrapper.jar
+
+### H2.DB ###
+*.db.mv.db
+*.db.trace.db
+development.db.mv.db
+
+## Ehcace Directory ###
+cache
