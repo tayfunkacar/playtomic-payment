@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-02-13T22:45:55+0300",
+    date = "2022-02-15T21:20:21+0300",
     comments = "version: 1.4.1.Final, compiler: javac, environment: Java 11.0.11 (Oracle Corporation)"
 )
 @Component
@@ -22,6 +22,7 @@ public class WalletMapperImpl implements WalletMapper {
         WalletDto walletDto = new WalletDto();
 
         walletDto.setId( entity.getId() );
+        walletDto.setCurrency( entity.getCurrency() );
         walletDto.setBalance( entity.getBalance() );
         walletDto.setCreditCardNumber( entity.getCreditCardNumber() );
 
@@ -37,6 +38,7 @@ public class WalletMapperImpl implements WalletMapper {
         Wallet wallet = new Wallet();
 
         wallet.setId( dto.getId() );
+        wallet.setCurrency( dto.getCurrency() );
         wallet.setBalance( dto.getBalance() );
         wallet.setCreditCardNumber( dto.getCreditCardNumber() );
 

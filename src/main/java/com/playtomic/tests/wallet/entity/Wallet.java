@@ -25,6 +25,7 @@ public class Wallet {
     @Enumerated(EnumType.STRING)
     private Currency currency;
 
+    @NonNull
     private BigDecimal balance;
 
     @NonNull

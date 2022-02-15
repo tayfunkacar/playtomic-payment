@@ -21,6 +21,11 @@ public class WalletController {
         return ResponseEntity.ok(walletService.getWalletById(walletId));
     }
 
+    @PostMapping("/save")
+    public ResponseEntity<WalletDto> save(@RequestBody WalletDto walletDto) {
+        return ResponseEntity.ok(walletService.save(walletDto));
+    }
+
     @PatchMapping("/add-amount")
     public ResponseEntity<WalletDto> topUptoWallet(@RequestBody PaymentDto paymentDto) {
         return ResponseEntity.ok(walletService.addAmountToWallet(paymentDto));

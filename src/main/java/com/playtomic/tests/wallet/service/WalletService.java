@@ -16,5 +16,5 @@ public interface WalletService {
 
     WalletDto refund(UUID paymentId);
 
-    Wallet findByIdWallet(UUID id);
+    WalletDto save(WalletDto saveDto);
 }

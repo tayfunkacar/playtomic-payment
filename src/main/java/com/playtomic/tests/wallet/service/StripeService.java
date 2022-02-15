@@ -34,6 +34,9 @@ public class StripeService {
     @NonNull
     private RestTemplate restTemplate;
 
+    @Value("spring.profiles.active")
+    private String value;
+
     public StripeService(@Value("stripe.simulator.charges-uri") @NonNull URI chargesUri,
                          @Value("stripe.simulator.refunds-uri") @NonNull URI refundsUri,
                          @NotNull RestTemplateBuilder restTemplateBuilder) {

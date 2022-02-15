@@ -25,6 +25,7 @@ public class WalletServiceImpl implements WalletService {
         return walletMapper.toDto(wallet);
     }
 
+
     @Transactional
     public WalletDto addAmountToWallet(PaymentDto paymentDto) {
         Wallet wallet = findByIdWallet(paymentDto.getWallet().getId());
@@ -54,9 +55,15 @@ public class WalletServiceImpl implements WalletService {
         return walletMapper.toDto(wallet);
     }
 
-    @Transactional
-    public Wallet findByIdWallet(UUID id) {
+    private Wallet findByIdWallet(UUID id) {
         return walletRepository.findById(id).orElseThrow(() -> new RuntimeException("No found wallet record"));
+    }
+
+    @Transactional
+    public WalletDto save(WalletDto saveDto) {
+        Wallet wallet = walletMapper.toEntity(saveDto);
+        wallet = walletRepository.save(wallet);
+        return walletMapper.toDto(wallet);
     }
 
 }

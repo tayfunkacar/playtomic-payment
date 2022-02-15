@@ -12,7 +12,7 @@ public class StripeRestTemplateResponseErrorHandler extends DefaultResponseError
     @Override
     protected void handleError(ClientHttpResponse response, HttpStatus statusCode) throws IOException {
         if (statusCode == HttpStatus.UNPROCESSABLE_ENTITY) {
-            throw new StripeAmountTooSmallException();
+            throw new StripeAmountTooSmallException(response.getStatusText());
         }
 
         super.handleError(response, statusCode);
