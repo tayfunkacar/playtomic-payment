@@ -79,15 +79,6 @@ public class WalletServiceTest {
         assertThat(wallet.getBalance()).isEqualTo(paymentDto.getAmount());
     }
 
-    @Test
-    public void payment() {
-        PaymentDto paymentDto = new PaymentDto();
-        paymentDto.setAmount(new BigDecimal("5"));
-        paymentDto.setWallet(walletService.getWalletById(walletId));
-        WalletDto wallet = walletService.payment(paymentDto);
-//        assertThat(wallet.getBalance()).isEqualTo(paymentDto.getAmount());
-    }
-
 
     @TestConfiguration
     static class TestConfig {
